@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    // モダンブラウザ向けなのでES2022にする
+    "module": "ES2022",
+    // 型チェックが厳密になる。JSのプロジェクトに徐々に導入するのではなく最初からTSで始める場合、基本有効にする
+    "strict": true,
+    // 出力されるJSがESのどのバージョンと互換性を持ったJSになるか
+    "target": "ES2022",
+    // ソースマップ(JS実行時例外のスタックトレースを変換前のTSのファイルと行番号で出力する仕組み)を有効にする
+    // "sourcemap"オプションがJSと別ファイルでソースマップを出力するのに対して、
+    // "inlineSourcemap"はソースマップを本体のJSと同じファイルに埋め込む。
+    "inlineSourceMap": true,
+    // trueにしないとmoduleResolutionを設定しないとエラーになる
+    "skipLibCheck": true
+  },
+  "references": [
+    // Web Worker用設定ファイルを参照する
+    {
+      "path": "tsconfig.worker.json"
+    }
+  ],
+  // TODO: 適宜フロント用にビルドする必要があるディレクトリを追加していく
+  "include": ["ch00.1/**/*"],
+  // TODO: ↑の追加に合わせてテスト用のTSファイルとWeb Worker用のTSファイルを除外していく
+  "exclude": ["ch00.1/**/*.spec.ts", "ch00.1/**/*.worker.ts"]
+}

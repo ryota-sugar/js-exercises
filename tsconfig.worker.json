@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.front.json",
+  "compilerOptions": {
+    // 参照ライブラリをWeb Worker用にする
+    "lib": ["webworker"],
+    // tsconfig.front.jsonから参照する
+    "declaration": true,
+    "composite": true
+  },
+  // TODO: 適宜Web Worker用にビルドするTSファイルを追加していく
+  "include": ["ch00.1/**/*.worker.ts"],
+  "exclude": []
+}
