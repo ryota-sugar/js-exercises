@@ -19,7 +19,9 @@
     // デフォルトエクスポートが設定されていないモジュールに対して、
     // import React from "react"; のようなインポートを許可する
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "allowJs": true,
+    "isolatedModules": true
   },
   // package.jsonでtype: "module"を指定しているので、ts-nodeで実行する場合もesmである必要がある
   "ts-node": {
