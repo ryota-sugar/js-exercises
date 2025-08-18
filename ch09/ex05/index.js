@@ -1,5 +1,6 @@
 export function instanceOf(obj, constructor) {
   // nullまたはオブジェクトでない場合は false を返す
+  // 関数も受け入れるようにしなければならない
   if (obj == null || typeof obj !== "object") return false;
 
   // objの内部プロトタイプを取得
@@ -11,3 +12,5 @@ export function instanceOf(obj, constructor) {
   }
   return false;
 }
+
+// constructorにFunctionを入れると？
