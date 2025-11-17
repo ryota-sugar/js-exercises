@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>Simple ToDo</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script type="module" src="/ch15.4-10/ex02/index.js"></script>
+    <!-- 以下の style.css は Tailwind CLI によって生成される -->
+    <!-- html または js を変更した場合は README.md に従い Tailwind CLI を実行し style.css を再度生成すること -->
+    <link rel="stylesheet" href="/ch15.4-10/ex02/style.css" />
+  </head>
+  <!-- IMPORTANT: ChatGPT にはここから下の内容しか変更させないこと -->
+  <body class="bg-gray-100 font-sans">
+    <div
+      class="container mx-auto max-w-lg mt-10 p-8 bg-white rounded-lg shadow-xl"
+    >
+      <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">
+        📝 Simple ToDo
+      </h1>
+
+      <form id="new-todo-form" class="flex mb-6">
+        <input
+          type="text"
+          id="new-todo"
+          placeholder="What needs to be done?"
+          class="flex-grow border border-gray-300 p-3 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+          autocomplete="off"
+        />
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-6 py-3 rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 font-semibold"
+        >
+          Add
+        </button>
+      </form>
+
+      <ul id="todo-list" class="space-y-3"></ul>
+    </div>
+
+    <template id="todo-template">
+      <li
+        class="flex items-center justify-between p-4 bg-white border border-gray-200 rounded-md shadow-sm transition-all duration-200"
+      >
+        <div class="view flex items-center flex-grow overflow-hidden">
+          <input
+            class="toggle h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 mr-4 flex-shrink-0"
+            type="checkbox"
+          />
+          <label
+            class="content text-gray-700 text-lg break-words transition-colors duration-200"
+          ></label>
+        </div>
+        <button
+          class="destroy text-gray-400 hover:text-red-500 text-xl font-bold ml-4 px-2 py-1 focus:outline-none rounded-full hover:bg-red-100 transition-colors duration-200 flex-shrink-0"
+        >
+          ❌
+        </button>
+      </li>
+    </template>
+  </body>
+</html>
