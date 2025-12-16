@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
       hourhand.setAttribute("transform", `rotate(${hourangle},50,50)`);
     secondHand.setAttribute("transform", `rotate(${secangle},50,50)`);
 
-    // 10秒後にこの関数を再度実行する。
+    // 1秒後にこの関数を再度実行する。
     setTimeout(updateClock, 1000);
   }
 

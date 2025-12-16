@@ -30,7 +30,8 @@
   "type": "module",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.17",
-    "acorn": "^8.14.1"
+    "acorn": "^8.14.1",
+    "ws": "^8.18.3"
   },
   "volta": {
     "node": "20.18.1"

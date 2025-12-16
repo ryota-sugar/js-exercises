@@ -147,3 +147,58 @@ pauseButton.addEventListener("click", () => {
 });
 
 renderGrid(grid);
+
+const gliderGunButton = document.querySelector("#gliderGun");
+gliderGunButton.addEventListener("click", () => {
+  const gunPattern = [
+    [1, 5],
+    [1, 6],
+    [2, 5],
+    [2, 6],
+    [11, 5],
+    [11, 6],
+    [11, 7],
+    [12, 4],
+    [12, 8],
+    [13, 3],
+    [14, 3],
+    [15, 6],
+    [16, 4],
+    [17, 5],
+    [17, 6],
+    [17, 7],
+    [18, 6],
+    [16, 8],
+    [13, 9],
+    [14, 9],
+    [21, 3],
+    [22, 3],
+    [21, 4],
+    [22, 4],
+    [21, 5],
+    [22, 5],
+    [23, 2],
+    [23, 6],
+    [25, 1],
+    [25, 2],
+    [25, 6],
+    [25, 7],
+    [35, 3],
+    [36, 3],
+    [35, 4],
+    [36, 4],
+  ];
+
+  // グリッドを全て白紙にする
+  const newGrid = new Array(ROWS)
+    .fill(null)
+    .map(() => new Array(COLS).fill(false));
+
+  // グライダー銃のパターンをセットする
+  gunPattern.forEach(([col, row]) => {
+    newGrid[col][row] = true; // 軸取り間違えた
+  });
+
+  grid = newGrid;
+  renderGrid(grid);
+});
