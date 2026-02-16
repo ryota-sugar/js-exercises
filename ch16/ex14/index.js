@@ -44,10 +44,7 @@ if (threads.isMainThread) {
       });
 
       // データを送信して処理開始
-      worker.postMessage(
-        { pixelData, info },
-        { transferList: [pixelData.buffer] }
-      );
+      worker.postMessage({ pixelData, info }, { transfer: [pixelData.buffer] });
 
       // 処理完了を待機
       const processedData = await processedDataPromise;
