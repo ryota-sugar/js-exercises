@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel
+
+# Pollen Particles 3D Data
+hinoki.glb
+sugi.glb
