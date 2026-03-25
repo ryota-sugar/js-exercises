@@ -12,6 +12,7 @@ type DeviceOrientationEventWithPermission = typeof DeviceOrientationEvent & {
 function hasRequestPermission(
   obj: typeof DeviceOrientationEvent,
 ): obj is DeviceOrientationEventWithPermission {
+  // DeviceOrientationEventにrequestPermissionメソッドが存在するかどうかでOSの判別を行う
   return (
     typeof (obj as DeviceOrientationEventWithPermission).requestPermission ===
     'function'
@@ -33,7 +34,7 @@ export default function StartARButton({ onStart }: Props) {
           onStart();
           return;
         }
-        const permissionState = await requestPermission();
+        const permissionState = await requestPermission(); // 許可のリクエストが必要
         if (permissionState === 'granted') {
           onStart();
           return;
@@ -52,7 +53,7 @@ export default function StartARButton({ onStart }: Props) {
     <>
       <button
         onClick={handleStartAR}
-        className="px-8 py-4 text-lg font-bold text-white bg-orange-500 rounded-full shadow-md hover:bg-orange-600 transition-colors"
+        className="px-8 py-4 text-lg font-bold text-white bg-blue-500 rounded-full shadow-md hover:bg-blue-600 transition-colors"
       >
         カメラを起動して確認
       </button>

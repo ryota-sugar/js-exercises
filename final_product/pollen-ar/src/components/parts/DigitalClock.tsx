@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react';
+import type { Time } from '../../types/Type';
 
 export default function DigitalClock() {
-  const [time, setTime] = useState({ hours: '', minutes: '', seconds: '' });
+  const [time, setTime] = useState<Time>({
+    hours: '',
+    minutes: '',
+    seconds: '',
+  });
 
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
       setTime({
-        hours: now.getHours().toString().padStart(2, '0'),
+        hours: now.getHours().toString().padStart(2, '0'), // padStartを使用して、2桁表示
         minutes: now.getMinutes().toString().padStart(2, '0'),
         seconds: now.getSeconds().toString().padStart(2, '0'),
       });
@@ -16,6 +21,7 @@ export default function DigitalClock() {
     updateClock();
     const timerId = setInterval(updateClock, 1000);
 
+    // アンマウント時にタイマークリア
     return () => clearInterval(timerId);
   }, []);
 

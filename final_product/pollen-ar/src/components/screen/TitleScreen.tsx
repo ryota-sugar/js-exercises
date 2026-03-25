@@ -12,12 +12,12 @@ export default function TitleScreen({ onStart }: Props) {
         <DigitalClock />
       </div>
       <h1 className="text-3xl font-bold text-gray-800 mb-2">
-        🤧 花粉チェッカー 😷 <br />
+        🤧 花粉チェッカー 🤧 <br />
       </h1>
       <p className="text-base text-gray-600 mb-8 leading-relaxed">
         スマホをかざして、
         <br />
-        目の前の「見えない脅威」を可視化しよう。
+        目の前の花粉を可視化します。
       </p>
       <StartARButton onStart={onStart} />
     </div>

@@ -117,8 +117,11 @@ export default function ARScreen({ onBack }: Props) {
 
       <div className="absolute top-0 left-0 w-full h-full z-10 pointer-events-none">
         <Canvas camera={{ position: [0, 0, 0] }} gl={{ alpha: true }}>
+          {/* スマホの向きに合わせて3Dのカメラ視点も動かすためのコントロール */}
           <DeviceOrientationControls />
+          {/* 全体を均等に照らす環境光 */}
           <ambientLight intensity={1} />
+          {/* ライトの配置を調整して、花粉のモデルがより立体的に見えるようにする(右上方向からの光にした) */}
           <directionalLight position={[10, 10, 10]} intensity={1.5} />
 
           <Suspense fallback={null}>

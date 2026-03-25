@@ -8,6 +8,12 @@ export type ApiData = {
   status: string;
 };
 
+export type Time = {
+  hours: string;
+  minutes: string;
+  seconds: string;
+};
+
 export type Settings = {
   isDemo: boolean;
   demoLevelSugi: number;
